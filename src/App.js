@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+// import EffectAtEveryRender from "./EffectAtEveryRender";
+// import EffectHook from "./EffectHook";
+
+// import { useState } from "react";
+// import UnmountEffect from './UnmountEffect'
+// import Form from "./Form";
+import Navigation from "./components/Navigation";
+// import EffectfetchwithForm from "./EffectfetchwithForm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './screens/Home'
+import About from './screens/About'
+import Contact from './screens/Contact'
+import Product from './screens/Product'
+// import EffectFetch from "./EffectFetch";
+
+// import EffectinForm from "./EffectinForm";
+
+
+
 
 function App() {
+  // const [mount, setmount] = useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+{/* <EffectHook/> */}
+{/* <EffectAtEveryRender/> */}
+{/* <EffectinForm/> */}
+{/* <EffectFetch/> */}
+{/* <EffectfetchwithForm/> */}
+{/* --------------------------------------- */}
+
+{/* <button onClick={()=> setmount(!mount)}>{mount===true?'Mount':'Unmount'}</button>
+    {mount===true? (<UnmountEffect/>):null}
+*/}
+ {/* <Form/> */}
+
+<Router>
+<Navigation/>
+  <Routes>
+  <Route exact path="/" element={<Home />} />
+  <Route exact path="/about" element={<About />} />
+  <Route exact path="/contact" element={<Contact />} />
+  <Route exact path="/products" element={<Product/>} />
+  </Routes>
+</Router>
+
+</> 
+
+ 
+
   );
 }
 
